@@ -1,18 +1,18 @@
 export const htmlTemplate = `
-  <h2>My Heroes</h2>
+  <h2>My chidioms</h2>
   <div>
-      <label>Hero name:</label> <input #heroName />
-      <button (click)="add(heroName.value); heroName.value=''">Add</button>
+      <label>chidiom name:</label> <input #chidiomName />
+      <button (click)="add(chidiomName.value); chidiomName.value=''">Add</button>
   </div>
-  <ul class="heroes">
-      <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-          <span class="badge">{{hero.id}}</span>
-          <span>{{hero.name}}</span>
-          <button class="delete" (click)="delete(hero, $event)">x</button>
+  <ul class="chidioms">
+      <li *ngFor="let chidiom of chidioms" (click)="onSelect(chidiom)" [class.selected]="chidiom === selectedchidiom">
+          <span class="badge">{{chidiom.id}}</span>
+          <span>{{chidiom.name}}</span>
+          <button class="delete" (click)="delete(chidiom, $event)">x</button>
       </li>
   </ul>
-  <div *ngIf="selectedHero">
-      <h2>{{selectedHero.name | uppercase}} is my hero</h2>
+  <div *ngIf="selectedchidiom">
+      <h2>{{selectedchidiom.name | uppercase}} is my chidiom</h2>
       <button (click)="gotoDetail()">View Details</button>
   </div>
 `;

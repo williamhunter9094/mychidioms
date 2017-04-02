@@ -1,7 +1,7 @@
 # Typescript Angular 2 + Node.js Starter Project with Linting, Minification, and Bundling
 
 ## About
-* Demo hosted on [Heroku](https://tour-of-heroes-typescript.herokuapp.com/)
+* Demo hosted on [chidiomku](https://tour-of-chidioms-typescript.chidiomkuapp.com/)
     (Using free dynos which sleep during inactivity, so initial load may be slow)
 * Angular 2 Code in Typescript 1.8 with SystemJS for module loading
     * Decouples components, models, services, and templates

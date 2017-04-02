@@ -1,12 +1,12 @@
-import { Hero } from './hero';
+import { chidiom } from './chidiom';
 
-describe('Hero', () => {
+describe('chidiom', () => {
     it('has name', () => {
-        let hero: Hero = {id: 1, name: 'Super Cat'};
-        expect(hero.name).toEqual('Super Cat');
+        let chidiom: chidiom = {id: 1, name: 'Super Cat'};
+        expect(chidiom.name).toEqual('Super Cat');
     });
     it('has id', () => {
-        let hero: Hero = {id: 1, name: 'Super Cat'};
-        expect(hero.id).toEqual(1);
+        let chidiom: chidiom = {id: 1, name: 'Super Cat'};
+        expect(chidiom.id).toEqual(1);
     });
 });

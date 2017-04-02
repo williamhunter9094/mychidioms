@@ -1,11 +1,11 @@
 export const htmlTemplate = `
-    <h3>Top Heroes</h3>
+    <h3>Top chidioms</h3>
     <div class="grid grid-pad">
-        <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
-            <div class="module hero">
-                <h4>{{hero.name}}</h4>
+        <div *ngFor="let chidiom of chidioms" (click)="gotoDetail(chidiom)" class="col-1-4">
+            <div class="module chidiom">
+                <h4>{{chidiom.name}}</h4>
             </div>
         </div>
     </div>
-    <hero-search></hero-search>
+    <chidiom-search></chidiom-search>
 `;

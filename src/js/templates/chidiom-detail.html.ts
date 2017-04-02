@@ -1,12 +1,12 @@
 export const htmlTemplate = `
-  <div *ngIf="hero">
-    <h2>{{hero.name}} details!</h2>
+  <div *ngIf="chidiom">
+    <h2>{{chidiom.name}} details!</h2>
     <div>
-        <label>id: </label>{{hero.id}}
+        <label>id: </label>{{chidiom.id}}
     </div>
     <div>
       <label>name: </label>
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="chidiom.name" placeholder="name"/>
     </div>
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>

@@ -1,7 +1,7 @@
 {
-  "name": "tour-of-heroes-typescript",
+  "name": "tour-of-chidioms-typescript",
   "version": "0.0.0",
-  "description": "Tour of Heroes demo",
+  "description": "Tour of chidioms demo",
   "engines": {
     "node": "6.5.0"
   },
@@ -62,12 +62,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/smmorneau/tour-of-heroes"
+    "url": "https://github.com/williamhunter9094/tour-of-chidioms"
   },
   "keywords": [
     "angular2",
     "express",
-    "heroku",
+    "chidiomku",
     "node"
   ]
 }

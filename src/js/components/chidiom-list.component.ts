@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../models/hero';
-import { HeroService } from '../services/hero.service';
-import { htmlTemplate } from '../templates/hero-list.html';
+import { chidiom } from '../models/chidiom';
+import { chidiomService } from '../services/chidiom.service';
+import { htmlTemplate } from '../templates/chidiom-list.html';
 
 @Component({
-    selector: 'my-heroes',
-    styleUrls: ['dist/css/component/hero-list.component.css'],
+    selector: 'my-chidioms',
+    styleUrls: ['dist/css/component/chidiom-list.component.css'],
     template: htmlTemplate,
 })
 
-export class HeroesListComponent implements OnInit {
-    heroes: Hero[];
-    selectedHero: Hero;
-    // addingHero = false;
+export class chidiomsListComponent implements OnInit {
+    chidioms: chidiom[];
+    selectedchidiom: chidiom;
+    // addingchidiom = false;
     error: any;
 
     constructor(
         private router: Router,
-        private heroService: HeroService) { }
+        private chidiomService: chidiomService) { }
 
-    getHeroes() {
-        this.heroService
-            .getHeroes()
+    getchidioms() {
+        this.chidiomService
+            .getchidioms()
             .subscribe(
-                heroes => this.heroes = heroes,
+                chidioms => this.chidioms = chidioms,
                 error => this.error = error // TODO: Display error message
             );
     }
@@ -33,38 +33,38 @@ export class HeroesListComponent implements OnInit {
     add(name: string): void {
         name = name.trim();
         if (!name) { return; }
-        this.heroService.create(name)
-          .subscribe(hero => {
-              this.heroes.push(hero);
-              this.selectedHero = null;
+        this.chidiomService.create(name)
+          .subscribe(chidiom => {
+              this.chidioms.push(chidiom);
+              this.selectedchidiom = null;
           });
     }
 
-    // close(savedHero: Hero) {
-    //     this.addingHero = false;
-    //     if (savedHero) { this.getHeroes(); }
+    // close(savedchidiom: chidiom) {
+    //     this.addingchidiom = false;
+    //     if (savedchidiom) { this.getchidioms(); }
     // }
 
-    delete(hero: Hero, event: any) {
+    delete(chidiom: chidiom, event: any) {
         event.stopPropagation();
-        this.heroService
-            .delete(hero)
+        this.chidiomService
+            .delete(chidiom)
             .subscribe(
-                res => this.heroes = this.heroes.filter(h => h.id !== hero.id),
+                res => this.chidioms = this.chidioms.filter(h => h.id !== chidiom.id),
                 error => this.error = error // TODO: Display error message
             );
     }
 
     ngOnInit() {
-        this.getHeroes();
+        this.getchidioms();
     }
 
-    onSelect(hero: Hero) {
-        this.selectedHero = hero;
-        // this.addingHero = false;
+    onSelect(chidiom: chidiom) {
+        this.selectedchidiom = chidiom;
+        // this.addingchidiom = false;
     }
 
     gotoDetail() {
-        this.router.navigate(['/detail/:id', { id: this.selectedHero.id }]);
+        this.router.navigate(['/detail/:id', { id: this.selectedchidiom.id }]);
     }
 }

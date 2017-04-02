@@ -19,14 +19,14 @@
     "typings/index.d.ts",
     "src/js/components/app.component.ts",
     "src/js/components/dashboard.component.ts",
-    "src/js/components/hero-detail.component.ts",
-    "src/js/components/hero-list.component.ts",
+    "src/js/components/chidiom-detail.component.ts",
+    "src/js/components/chidiom-list.component.ts",
     "src/js/main.ts",
-    "src/js/models/hero.ts",
-    "src/js/services/hero.service.ts",
+    "src/js/models/chidiom.ts",
+    "src/js/services/chidiom.service.ts",
     "src/js/services/in-memory-data.service.ts",
     "src/js/templates/dashboard.html.ts",
-    "src/js/templates/hero-detail.html.ts",
-    "src/js/templates/hero-list.html.ts"
+    "src/js/templates/chidiom-detail.html.ts",
+    "src/js/templates/chidiom-list.html.ts"
   ]
 }

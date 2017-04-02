@@ -2,8 +2,8 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from './components/dashboard.component';
-import { HeroesListComponent }  from './components/hero-list.component';
-import { HeroDetailComponent }  from './components/hero-detail.component';
+import { chidiomsListComponent }  from './components/chidiom-list.component';
+import { chidiomDetailComponent }  from './components/chidiom-detail.component';
 
 
 const routes: Routes = [
@@ -17,12 +17,12 @@ const routes: Routes = [
     path: 'dashboard',
   },
   {
-    component: HeroDetailComponent,
+    component: chidiomDetailComponent,
     path: 'detail/:id',
   },
   {
-    component: HeroesListComponent,
-    path: 'heroes',
+    component: chidiomsListComponent,
+    path: 'chidioms',
   },
 ];
 

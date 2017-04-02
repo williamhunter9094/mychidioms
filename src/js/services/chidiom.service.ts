@@ -2,48 +2,48 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Hero } from '../models/hero';
+import { chidiom } from '../models/chidiom';
 
 @Injectable()
-export class HeroService {
-    private heroesUrl = 'app/heroes';  // URL to web api
+export class chidiomService {
+    private chidiomsUrl = 'app/chidioms';  // URL to web api
     private headers = new Headers({'Content-Type': 'application/json'});
     private options = new RequestOptions({ headers: this.headers });
 
     constructor(private http: Http) { }
 
-    getHeroes(): Observable<Hero[]> {
+    getchidioms(): Observable<chidiom[]> {
         return this.http
-            .get(this.heroesUrl)
+            .get(this.chidiomsUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
-    getHero(id: number): Observable<Hero> {
-        return this.getHeroes()
-            .map(heroes => {
-                console.log('HEROES', heroes);
-                return heroes.filter(hero => hero.id === id)[0];
+    getchidiom(id: number): Observable<chidiom> {
+        return this.getchidioms()
+            .map(chidioms => {
+                console.log('chidioms', chidioms);
+                return chidioms.filter(chidiom => chidiom.id === id)[0];
             });
     }
 
-    create(name: string): Observable<Hero> {
+    create(name: string): Observable<chidiom> {
         return this.http
-          .post(this.heroesUrl, JSON.stringify({name: name}), this.options)
+          .post(this.chidiomsUrl, JSON.stringify({name: name}), this.options)
           .map(this.extractData)
           .catch(this.handleError);
     }
 
-    update(hero: Hero): Observable<Hero>  {
-        let url = `${this.heroesUrl}/${hero.id}`;
+    update(chidiom: chidiom): Observable<chidiom>  {
+        let url = `${this.chidiomsUrl}/${chidiom.id}`;
 
         return this.http
-          .put(url, JSON.stringify(hero), this.options)
-          .map(() => hero);
+          .put(url, JSON.stringify(chidiom), this.options)
+          .map(() => chidiom);
     }
 
-    delete(hero: Hero): Observable<Response> {
-        let url = `${this.heroesUrl}/${hero.id}`;
+    delete(chidiom: chidiom): Observable<Response> {
+        let url = `${this.chidiomsUrl}/${chidiom.id}`;
 
         return this.http
             .delete(url, this.options);

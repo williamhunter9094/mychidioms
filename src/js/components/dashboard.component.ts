@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../models/hero';
-import { HeroService } from '../services/hero.service';
+import { chidiom } from '../models/chidiom';
+import { chidiomService } from '../services/chidiom.service';
 import { htmlTemplate } from '../templates/dashboard.html';
 
 @Component({
@@ -12,28 +12,28 @@ import { htmlTemplate } from '../templates/dashboard.html';
 })
 
 export class DashboardComponent implements OnInit {
-    heroes: Hero[] = [];
+    chidioms: chidiom[] = [];
 
     constructor(
         private router: Router,
-        private heroService: HeroService
+        private chidiomService: chidiomService
     ) {
         console.log('DashboardComponent');
     }
 
-    getHeroes() {
-        this.heroService.getHeroes()
-            .subscribe(heroes => {
-                this.heroes = heroes.slice(1, 5);
+    getchidioms() {
+        this.chidiomService.getchidioms()
+            .subscribe(chidioms => {
+                this.chidioms = chidioms.slice(1, 5);
             });
     }
 
-    gotoDetail(hero: Hero): void {
-        let link = ['/detail', hero.id];
+    gotoDetail(chidiom: chidiom): void {
+        let link = ['/detail', chidiom.id];
         this.router.navigate(link);
     }
 
     ngOnInit() {
-        this.getHeroes();
+        this.getchidioms();
     }
 }

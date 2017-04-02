@@ -2,44 +2,44 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { Hero }                     from '../models/hero';
-import { HeroService }              from '../services/hero.service';
-import { htmlTemplate }             from '../templates/hero-detail.html';
+import { chidiom }                     from '../models/chidiom';
+import { chidiomService }              from '../services/chidiom.service';
+import { htmlTemplate }             from '../templates/chidiom-detail.html';
 
 @Component({
-    selector: 'my-hero-detail',
-    styleUrls: ['dist/css/component/hero-detail.component.css'],
+    selector: 'my-chidiom-detail',
+    styleUrls: ['dist/css/component/chidiom-detail.component.css'],
     template: htmlTemplate,
 })
 
-export class HeroDetailComponent implements OnInit {
-    hero: Hero;
+export class chidiomDetailComponent implements OnInit {
+    chidiom: chidiom;
     error: any;
 
     constructor(
         private route: ActivatedRoute,
         private location: Location,
-        private heroService: HeroService
+        private chidiomService: chidiomService
     ) {}
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
             if (id) {
-                this.heroService.getHero(id)
-                    .subscribe(hero => this.hero = hero);
+                this.chidiomService.getchidiom(id)
+                    .subscribe(chidiom => this.chidiom = chidiom);
             } else {
-                this.hero = new Hero();
+                this.chidiom = new chidiom();
             }
         });
     }
 
     save(): void {
-        this.heroService
-            .update(this.hero)
+        this.chidiomService
+            .update(this.chidiom)
             .subscribe(
-                hero => {
-                    this.hero = hero; // saved hero, w/ id if new
+                chidiom => {
+                    this.chidiom = chidiom; // saved chidiom, w/ id if new
                     this.goBack();
                 },
                 error => this.error = error  // TODO: Display error message

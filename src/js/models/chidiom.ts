@@ -1,4 +1,4 @@
-export class Hero {
+export class chidiom {
     id: number;
     name: string;
 }
