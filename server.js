@@ -10,16 +10,16 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(express.static(__dirname + '/public'));
 
 var heroes = [
-  {id: 11, name: 'Mr. Nice'},
-  {id: 12, name: 'Narco'},
-  {id: 13, name: 'Bombasto'},
-  {id: 14, name: 'Celeritas'},
-  {id: 15, name: 'Magneta'},
-  {id: 16, name: 'RubberMan'},
-  {id: 17, name: 'Dynama'},
-  {id: 18, name: 'Dr IQ'},
-  {id: 19, name: 'Magma'},
-  {id: 20, name: 'Tornado'},
+  {id: 11, name: 'Dead Rabbit'},
+  {id: 12, name: 'Exemplar Teacher'},
+  {id: 13, name: 'Break Axe'},
+  {id: 14, name: 'Eight Immortals'},
+  {id: 15, name: 'Garlic Skin'},
+  {id: 16, name: 'Already-Know'},
+  {id: 17, name: 'Yu Gong'},
+  {id: 18, name: 'Hide Bushels'},
+  {id: 19, name: 'Eatable Beauty'},
+  {id: 20, name: 'Dragon Horse'},
 ];
 
 app.get('/app/heroes', function(req, res) {
